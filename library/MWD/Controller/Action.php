@@ -10,6 +10,7 @@ abstract class MWD_Controller_Action extends Zend_Controller_Action {
 
     public function init(){
         $this->preInit();
+        $this->view->error = "";
         /* Initialize action controller here */
 
 

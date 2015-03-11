@@ -1,0 +1,36 @@
+.calendar_daycard {
+}
+
+.calendar_table td {
+	width: 14%;
+	font-size: 30px;
+	text-align: center;
+	text-shadow: 0px 0px 3px rgba(255, 255, 255, 5);
+}
+
+
+.calendar_table td.calendar_outofrange { color: #FFA273; text-shadow: none; }
+.calendar_table td.calendar_today { color: #000; text-shadow: 0px 0px 3px rgba(0, 0, 0, 5); }
+.calendar_table td.calendar_normal { color: #fff; }
+.calendar_table td.calendar_outofrange.calendar_sunday { color: #FF3333; text-shadow: none; }
+.calendar_table td.calendar_normal.calendar_sunday { color: #BB0000; text-shadow: 0px 0px 3px rgba(221, 0, 0, 5); }
+.calendar_table td.calendar_today.calendar_sunday { color: #BB0000; text-shadow: 0px 0px 3px rgba(221, 0, 0, 5); }
+
+.calendar_table td div {
+	font-size: 10px;
+	color: #000;
+	text-shadow: none;
+}
+.calendar_table tr:first-child td {
+	font-style: italic;
+	color: #331100;
+	font-size: 30px;
+	text-shadow: 2px 2px 5px rgba(51, 17, 0, 5);
+}
+
+.dateselctbtn {
+	color: #000;
+}
+.dateselct {
+	width: 20%;
+}
