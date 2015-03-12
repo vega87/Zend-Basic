@@ -20,6 +20,10 @@
       </layoutsDirectory>
       <modelsDirectory>
         <modelFile modelName="Test"/>
+        <dbTableDirectory>
+          <dbTableFile dbTableName="User"/>
+        </dbTableDirectory>
+        <modelFile modelName="UserMapper"/>
       </modelsDirectory>
       <modulesDirectory>
         <moduleDirectory moduleName="admin">

@@ -13,7 +13,9 @@ abstract class MWD_Controller_Action extends Zend_Controller_Action {
         $this->view->error = "";
         /* Initialize action controller here */
 
-
+        /* Initialize action controller here */
+        $registry = Zend_Registry::getInstance();
+        $this->_em = $registry->entitymanager;
 
         $this->postInit();
     }
