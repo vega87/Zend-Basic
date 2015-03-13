@@ -1,0 +1,53 @@
+.dashboardicon {
+    width: 19.2%;
+    float: left;
+    text-align: center;
+    margin-right: 1%;
+    margin-bottom: 1%;
+}
+.dashboardicon.inactive * {
+    color: #666;
+}
+
+.dashboardicon:nth-child(5n+0) {
+    margin-right: 0;
+}
+
+.dashboardicon_inner {
+    width: 100%;
+    /* border: 1px dotted #ccc; */
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+.dashboardicon_inner i {
+    font-size: 180px;
+    clear: both;
+    margin-bottom: 5px;
+    text-align:center;
+}
+.dashboardicon a:hover {
+    text-decoration: none;
+}
+.dashboardicon .dashboardicon_inner:hover {
+    background-color: #FF5500;
+}
+.dashboardicon.inactive .dashboardicon_inner:hover {
+    background-color: transparent;
+}
+
+.dashboard a:hover{
+    background-color: #ac3c00;
+}
+
+a:focus, a:hover {
+    color: #ac3c00;
+    text-decoration: underline;
+}
+
+.icon_name{
+    color: #ffffff;
+}
