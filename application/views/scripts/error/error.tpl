@@ -10,25 +10,38 @@
   </style>
 </head>
 <body>
-  <h1>An error occurred</h1>
-  <h2>{$this->message}</h2>
 
-  {if (isset($this->exception))}
+<div class="container" style="margin-top: 20px;">
 
-  <h3>Exception information:</h3>
-  <p>
-      <b>Message:</b> {$this->exception->getMessage()}
-  </p>
+    <div class="panel panel-default error">
 
-  <h3>Stack trace:</h3>
-  <pre>{$this->exception->getTraceAsString()}
-  </pre>
+        <div class="panel-heading">Fehler</div>
 
-  <h3>Request Parameters:</h3>
-  <pre>{$this->escape(var_export($this->request->getParams(), true))}
-  </pre>
+        <div class="panel-body">
 
-  {/if}
+          <h1>An error occurred</h1>
+          <h2>{$this->message}</h2>
+
+          {if (isset($this->exception))}
+
+          <h3>Exception information:</h3>
+          <p>
+              <b>Message:</b> {$this->exception->getMessage()}
+          </p>
+
+          <h3>Stack trace:</h3>
+          <pre>{$this->exception->getTraceAsString()}
+          </pre>
+
+          <h3>Request Parameters:</h3>
+          <pre>{$this->escape(var_export($this->request->getParams(), true))}
+          </pre>
+
+          {/if}
+
+        </div>
+
+    </div>
 
 </body>
 </html>
