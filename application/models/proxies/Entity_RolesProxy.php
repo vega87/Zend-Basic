@@ -66,6 +66,18 @@ class Entity_RolesProxy extends \Entity_Roles implements \Doctrine\ORM\Proxy\Pro
         return parent::getKey();
     }
 
+    public function addEntity_Groups(\Entity_Groups $group)
+    {
+        $this->__load();
+        return parent::addEntity_Groups($group);
+    }
+
+    public function getGroup()
+    {
+        $this->__load();
+        return parent::getGroup();
+    }
+
     public function toArray()
     {
         $this->__load();
@@ -87,7 +99,7 @@ class Entity_RolesProxy extends \Entity_Roles implements \Doctrine\ORM\Proxy\Pro
 
     public function __sleep()
     {
-        return array('__isInitialized__', 'id', 'name', 'key');
+        return array('__isInitialized__', 'id', 'name', 'key', 'group');
     }
 
     public function __clone()
