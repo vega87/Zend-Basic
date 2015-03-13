@@ -24,7 +24,7 @@ class MWD_Controller_Main extends Zend_Controller_Action{
     }
 
     public function isLoggedIn(){
-        $session = new Zend_Session_Namespace('MWD_de');
+        $session = new Zend_Session_Namespace('MWD_PW_de');
         if(isset($session->userid)){
             $user = $this->db->getRepository('Entity_Users')->find($session->userid);
             if(!empty($user)){

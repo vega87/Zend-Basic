@@ -54,3 +54,21 @@ a {
 footer {
     color: #e3e3e3;
 }
+
+.error > .panel-heading {
+    background-color: #f5878a;
+    border-color: #e84545;
+    color: #333;
+}
+.error > .panel-heading {
+    background-image: linear-gradient(to bottom, #f5878a 0px, #e84545 100%);
+    background-repeat: repeat-x;
+}
+
+.panel {
+    background-color: #EEEEEE;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}

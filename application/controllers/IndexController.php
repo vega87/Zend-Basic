@@ -24,11 +24,18 @@ class IndexController extends MWD_Controller_Main
                         $this->_redirect($this->getRequest()->getParam('jump_to',null));
                     }
                     $this->_redirect('/user/index/index/');
+                } else {
+                    $this->view->error = "Benutzername und/oder Passwort falsch oder leer";
                 }
             } else {
                 $this->view->error = "Benutzername und/oder Passwort falsch oder leer";
             }
         }
+    }
+
+    public function logoutAction(){
+        Zend_Session::destroy();
+        $this->_redirect('/');
     }
 }
 

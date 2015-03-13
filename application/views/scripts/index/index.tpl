@@ -2,19 +2,19 @@
     <div class="content">
         <img src="/img/mwd-systems-logo_large.png" style="width:100%;" class="loginImg"/>
 
-        <form action="/user/index" method="post" class="bs-docs-example form-horizontal">
+        <form action="/index/" method="post" class="bs-docs-example form-horizontal">
             <div class="form-group">
 
                 <label for="inputUsername">Benutzername</label>
 
-                <input name="identity" type="text" placeholder="Benutzername" class="form-control" id="inputUsername" value="">
+                <input name="username" type="text" placeholder="Benutzername" class="form-control" id="inputUsername" value="">
             </div>
 
             <div class="form-group">
 
                 <label for="inputPassword">Password</label>
 
-                <input name="credential" type="password" placeholder="Passwort" class="form-control" id="inputPassword"
+                <input name="password" type="password" placeholder="Passwort" class="form-control" id="inputPassword"
                        value=""></div>
 
             <div class="form-group">

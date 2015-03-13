@@ -60,7 +60,7 @@
                 <li class=""><a href="#">Projekte</a></li>
                 <li class=""><a href="#">Abrechnung</a></li>
                 <li class=""><a href="#">Einstellungen</a></li>
-                <li><a href="#">Logout</a></li>
+                <li><a href="/index/logout/">Logout</a></li>
             </ul>
 
         </div>

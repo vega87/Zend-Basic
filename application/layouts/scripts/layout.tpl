@@ -70,6 +70,16 @@
 
 <div class="container" style="margin-top: 60px;">
 
+    {if $error != ""}
+        <div class="panel panel-default error">
+
+            <div class="panel-heading">Fehler</div>
+
+            <div class="panel-body">{$error}</div>
+
+        </div>
+    {/if}
+
     {$this->layout()->content}
     <hr>
 
