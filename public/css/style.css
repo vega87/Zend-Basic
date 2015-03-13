@@ -72,3 +72,8 @@ footer {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
     margin-bottom: 20px;
 }
+
+.footable > thead > tr > th, .footable > thead > tr > td {
+    background-color: rgba(255, 110, 0, 0.36);
+    background-image: linear-gradient(to bottom, rgba(252, 120, 1, 0.38), rgba(249, 123, 0, 0.68));
+}

@@ -1,7 +1,7 @@
 {$this->headLink()->prependStylesheet('/css/pages/dashboard.css')|truncate:0:""}
 <div class="row dashboard">
     <div class="col-sm-6 col-md-4 col-lg-2">
-        <a href="#">
+        <a href="/user/password/">
             <div class="dashboardicon_inner">
                 <i class="fa fa-key"></i><br/><span class="icon_name">Passwörter</span>
             </div>
@@ -14,6 +14,7 @@
             </div>
         </a>
     </div>
+    {if $loggedinUser->getRole()->getKey() == "ADMIN"}
     <div class="clearfix visible-sm-block"></div>
     <div class="col-sm-6 col-md-4 col-lg-2">
         <a href="#">
@@ -22,5 +23,5 @@
             </div>
         </a>
     </div>
-
+    {/if}
 </div>

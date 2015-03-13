@@ -8,6 +8,11 @@ class IndexController extends MWD_Controller_Main
     }
 
     public function indexAction(){
+        $session = new Zend_Session_Namespace('MWD_PW_de');
+        if(isset($session->userid)){
+            $this->_redirect('/user/index/index/');
+        }
+
         $postData = $this->getRequest()->getParams();
 
         if(isset($postData['submit'])){

@@ -12,12 +12,17 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
     {$this->headLink()->prependStylesheet('/css/fonts.css')|truncate:0:""}
     {$this->headLink()->prependStylesheet('/css/style.css')|truncate:0:""}
+    {$this->headLink()->prependStylesheet('/css/footable.standalone.css')|truncate:0:""}
+    {$this->headLink()->prependStylesheet('/css/footable.core.css')|truncate:0:""}
     {$this->headLink()->prependStylesheet('/css/bootstrap.min.css')|truncate:0:""}
     {$this->headLink()->prependStylesheet('/css/bootstrap-theme.min.css')|truncate:0:""}
 
     {$this->headLink()}
 
     <!-- Scripts -->
+    {$this->headScript()->prependFile('/js/footable.paginate.js')|truncate:0:""}
+    {$this->headScript()->prependFile('/js/footable.sort.js')|truncate:0:""}
+    {$this->headScript()->prependFile('/js/footable.js')|truncate:0:""}
     {$this->headScript()->prependFile('/js/bootstrap.min.js')|truncate:0:""}
     {$this->headScript()->prependFile('/js/jquery.min.js')|truncate:0:""}
 
@@ -54,12 +59,12 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
 
             <ul class="nav navbar-nav">
-                <li class=""><a href="#">Home</a></li>
-                <li class=""><a href="#">Benutzer</a></li>
-                <li class=""><a href="#">Klienten</a></li>
-                <li class=""><a href="#">Projekte</a></li>
-                <li class=""><a href="#">Abrechnung</a></li>
+                <li class=""><a href="/">Home</a></li>
+                <li class=""><a href="/user/password/">Passwörter</a></li>
                 <li class=""><a href="#">Einstellungen</a></li>
+                {if $loggedinUser->getRole()->getKey() == "ADMIN"}
+                    <li class=""><a href="#">Nutzerverwaltung</a></li>
+                {/if}
                 <li><a href="/index/logout/">Logout</a></li>
             </ul>
 
@@ -70,6 +75,16 @@
 </nav>
 
 <div class="container" style="margin-top: 60px;">
+
+    {if $error != ""}
+        <div class="panel panel-default error">
+
+            <div class="panel-heading">Fehler</div>
+
+            <div class="panel-body">{$error}</div>
+
+        </div>
+    {/if}
 
     {$this->layout()->content}
     <hr>

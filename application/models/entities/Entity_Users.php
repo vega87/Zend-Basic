@@ -56,6 +56,16 @@ class Entity_Users extends \MWD_Doctrine_Entity_Abstract
      */
     private $email;
 
+    /**
+     * @var Entity_Roles
+     *
+     * @ManyToOne(targetEntity="Entity_Roles")
+     * @JoinColumns({
+     *   @JoinColumn(name="role_id", referencedColumnName="id")
+     * })
+     */
+    private $role;
+
 
 
     /**
@@ -166,5 +176,25 @@ class Entity_Users extends \MWD_Doctrine_Entity_Abstract
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Set role
+     *
+     * @param Entity_Roles $role
+     */
+    public function setRole(\Entity_Roles $role = null)
+    {
+        $this->role = $role;
+    }
+
+    /**
+     * Get role
+     *
+     * @return Entity_Roles 
+     */
+    public function getRole()
+    {
+        return $this->role;
     }
 }
