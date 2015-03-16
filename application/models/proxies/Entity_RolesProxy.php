@@ -54,16 +54,40 @@ class Entity_RolesProxy extends \Entity_Roles implements \Doctrine\ORM\Proxy\Pro
         return parent::getName();
     }
 
-    public function setKey($key = NULL)
+    public function setMetaKey($metaKey = NULL)
     {
         $this->__load();
-        return parent::setKey($key);
+        return parent::setMetaKey($metaKey);
     }
 
-    public function getKey()
+    public function getMetaKey()
     {
         $this->__load();
-        return parent::getKey();
+        return parent::getMetaKey();
+    }
+
+    public function setDescription($description = NULL)
+    {
+        $this->__load();
+        return parent::setDescription($description);
+    }
+
+    public function getDescription()
+    {
+        $this->__load();
+        return parent::getDescription();
+    }
+
+    public function setCreatedAt($createdAt = NULL)
+    {
+        $this->__load();
+        return parent::setCreatedAt($createdAt);
+    }
+
+    public function getCreatedAt()
+    {
+        $this->__load();
+        return parent::getCreatedAt();
     }
 
     public function addEntity_Groups(\Entity_Groups $group)
@@ -99,7 +123,7 @@ class Entity_RolesProxy extends \Entity_Roles implements \Doctrine\ORM\Proxy\Pro
 
     public function __sleep()
     {
-        return array('__isInitialized__', 'id', 'name', 'key', 'group');
+        return array('__isInitialized__', 'id', 'name', 'metaKey', 'description', 'createdAt', 'group');
     }
 
     public function __clone()

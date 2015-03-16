@@ -1,4 +1,16 @@
-{$this->headScript()->prependFile('/js/pages/passwordlist.js')|truncate:0:""}
+{$this->headScript()->prependFile('/js/pages/rolelist.js')|truncate:0:""}
+
+<div class="panel panel-default">
+    <div class="panel-heading">Neue Rolle</div>
+    <div class="panel-body">
+        <form action="/admin/role/create/" id="filterfrm" method="POST" class="form-inline">
+
+            <button type="submit" class="btn btn-primary">Neue Rolle anlegen</button>
+
+        </form>
+    </div>
+</div>
+
 <div class="panel panel-default">
 
     <div class="panel-body">
@@ -32,13 +44,25 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                            {foreach $roles as $role}
+                            <tr>
+                                <td>{$role->getName()}</td>
+                                <td>{$role->getDescription()}</td>
+                                <td>
+                                    {if $role->getGroup()->isEmpty() != true}
+                                        {foreach $role->getGroup() as $group}
+                                            {if $group == $role->getGroup()->last()}
+                                                {$group->getName()}
+                                                {else}
+                                                {$group->getName()},
+                                            {/if}
+                                        {/foreach}
+                                    {/if}
+                                </td>
+                                <td>{$role->getCreatedAt()|date_format:"%d.%m.%Y"}</td>
+                                <td><a href="/admin/role/edit/id/{$role->getId()}" class="btn btn-block btn-primary">Bearbeiten</a></td>
+                            </tr>
+                            {/foreach}
                         </tbody>
                     </table>
                 </div>

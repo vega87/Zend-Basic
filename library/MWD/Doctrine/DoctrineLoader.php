@@ -120,6 +120,8 @@ class MWD_Doctrine_DoctrineLoader extends MWD_Singleton{
 
         $entityManager = \Doctrine\ORM\EntityManager::create($conn, $config);
 
+        $entityManager->getConnection()->getConfiguration()->setSQLLogger( new MWD_Doctrine_Logging_FileSQLLogger());
+
         // $entityManager is an instance of EntityManager
         // Add UTF8 handler to EntityManager
         $entityManager->getEventManager()->addEventSubscriber(

@@ -62,7 +62,7 @@
                 <li class=""><a href="/">Home</a></li>
                 <li class=""><a href="/user/password/">Passwörter</a></li>
                 <li class=""><a href="#">Einstellungen</a></li>
-                {if $loggedinUser->getRole()->getKey() == "ADMIN"}
+                {if $loggedinUser->getRole()->getMetaKey() == "ADMIN"}
                     <li class=""><a href="#">Nutzerverwaltung</a></li>
                 {/if}
                 <li><a href="/index/logout/">Logout</a></li>

@@ -1,4 +1,16 @@
-{$this->headScript()->prependFile('/js/pages/passwordlist.js')|truncate:0:""}
+{$this->headScript()->prependFile('/js/pages/grouplist.js')|truncate:0:""}
+
+<div class="panel panel-default">
+    <div class="panel-heading">Neue Gruppe</div>
+    <div class="panel-body">
+        <form action="/admin/group/create" id="filterfrm" method="POST" class="form-inline">
+
+            <button type="submit" class="btn btn-primary">Neue Gruppe anlegen</button>
+
+        </form>
+    </div>
+</div>
+
 <div class="panel panel-default">
 
     <div class="panel-body">
@@ -21,9 +33,6 @@
                                 Beschreibung
                             </th>
                             <th data-hide="phone,tablet">
-                                Gruppe
-                            </th>
-                            <th data-hide="phone,tablet">
                                 Datum
                             </th>
                             <th data-hide="" data-sort-ignore="true">
@@ -32,13 +41,14 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                        {foreach $groups as $group}
+                            <tr>
+                                <td>{$group->getName()}</td>
+                                <td>{$group->getDescription()}</td>
+                                <td>{$group->getCreatedAt()|date_format:"%d.%m.%Y"}</td>
+                                <td><a href="/admin/group/edit/id/{$group->getId()}" class="btn btn-block btn-primary">Bearbeiten</a></td>
+                            </tr>
+                        {/foreach}
                         </tbody>
                     </table>
                 </div>

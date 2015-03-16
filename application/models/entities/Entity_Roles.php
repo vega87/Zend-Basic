@@ -29,11 +29,25 @@ class Entity_Roles extends \MWD_Doctrine_Entity_Abstract
     private $name;
 
     /**
-     * @var string $key
+     * @var string $metaKey
      *
-     * @Column(name="key", type="string", length=255, nullable=true)
+     * @Column(name="meta_key", type="string", length=255, nullable=true)
      */
-    private $key;
+    private $metaKey;
+
+    /**
+     * @var text $description
+     *
+     * @Column(name="description", type="text", nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var string $createdAt
+     *
+     * @Column(name="created_at", type="string", nullable=false)
+     */
+    private $createdAt;
 
     /**
      * @var Entity_Groups
@@ -87,23 +101,63 @@ class Entity_Roles extends \MWD_Doctrine_Entity_Abstract
     }
 
     /**
-     * Set key
+     * Set metaKey
      *
-     * @param string $key
+     * @param string $metaKey
      */
-    public function setKey($key = null)
+    public function setMetaKey($metaKey = null)
     {
-        $this->key = $key;
+        $this->metaKey = $metaKey;
     }
 
     /**
-     * Get key
+     * Get metaKey
      *
      * @return string 
      */
-    public function getKey()
+    public function getMetaKey()
     {
-        return $this->key;
+        return $this->metaKey;
+    }
+
+    /**
+     * Set description
+     *
+     * @param text $description
+     */
+    public function setDescription($description = null)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * Get description
+     *
+     * @return text 
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param string $createdAt
+     */
+    public function setCreatedAt($createdAt = null)
+    {
+        $this->createdAt = $createdAt;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return string 
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
     }
 
     /**

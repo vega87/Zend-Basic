@@ -43,6 +43,16 @@ class Entity_Passwords extends \MWD_Doctrine_Entity_Abstract
     private $password;
 
     /**
+     * @var Entity_Users
+     *
+     * @ManyToOne(targetEntity="Entity_Users")
+     * @JoinColumns({
+     *   @JoinColumn(name="created_by", referencedColumnName="id")
+     * })
+     */
+    private $createdBy;
+
+    /**
      * @var Entity_Groups
      *
      * @ManyToOne(targetEntity="Entity_Groups")
@@ -122,6 +132,26 @@ class Entity_Passwords extends \MWD_Doctrine_Entity_Abstract
     public function getPassword()
     {
         return $this->password;
+    }
+
+    /**
+     * Set createdBy
+     *
+     * @param Entity_Users $createdBy
+     */
+    public function setCreatedBy(\Entity_Users $createdBy = null)
+    {
+        $this->createdBy = $createdBy;
+    }
+
+    /**
+     * Get createdBy
+     *
+     * @return Entity_Users 
+     */
+    public function getCreatedBy()
+    {
+        return $this->createdBy;
     }
 
     /**

@@ -15,7 +15,7 @@
         </a>
     </div>
 </div>
-{if $loggedinUser->getRole()->getKey() == "ADMIN"}
+{if $loggedinUser->getRole()->getMetaKey() == "ADMIN"}
 <hr>
 <div class="row dashboard">
     <div class="col-sm-6 col-md-4 col-lg-2">
@@ -27,7 +27,7 @@
     </div>
 
     <div class="col-sm-6 col-md-4 col-lg-2">
-        <a href="#">
+        <a href="/admin/role/">
             <div class="dashboardicon_inner">
                 <i class="fa fa-list"></i><br/><span class="icon_name">Rollenverwaltung</span>
             </div>
@@ -35,7 +35,7 @@
     </div>
 
     <div class="col-sm-6 col-md-4 col-lg-2">
-        <a href="#">
+        <a href="/admin/group/">
             <div class="dashboardicon_inner">
                 <i class="fa fa-sitemap"></i><br/><span class="icon_name">Gruppenverwaltung</span>
             </div>

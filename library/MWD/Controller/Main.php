@@ -19,28 +19,6 @@ class MWD_Controller_Main extends Zend_Controller_Action{
         $this->db = Zend_Registry::get('entitymanager');
 
         $this->view->error = "";
-
-        $this->isLoggedIn();
     }
 
-    public function isLoggedIn(){
-        $session = new Zend_Session_Namespace('MWD_PW_de');
-        if(isset($session->userid)){
-            $user = $this->db->getRepository('Entity_Users')->find($session->userid);
-            if(!empty($user)){
-                $this->view->loggedin = true;
-                $this->view->loggedinUser = $user;
-
-                return true;
-            } else {
-                $this->view->loggedin = false;
-
-                return false;
-            }
-        } else {
-            $this->view->loggedin = false;
-
-            return false;
-        }
-    }
 }
