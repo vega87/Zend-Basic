@@ -59,15 +59,7 @@
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
 
-            <ul class="nav navbar-nav">
-                <li class=""><a href="/">Home</a></li>
-                <li class=""><a href="/user/password/">Passwörter</a></li>
-                <li class=""><a href="#">Einstellungen</a></li>
-                {if $loggedinUser->getRole()->getMetaKey() == "ADMIN"}
-                    <li class=""><a href="#">Nutzerverwaltung</a></li>
-                {/if}
-                <li><a href="/index/logout/">Logout</a></li>
-            </ul>
+            {include './misc/navigation.tpl'}
 
         </div>
 

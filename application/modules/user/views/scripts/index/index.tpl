@@ -19,7 +19,7 @@
 <hr>
 <div class="row dashboard">
     <div class="col-sm-6 col-md-4 col-lg-2">
-        <a href="#">
+        <a href="/admin/users/">
             <div class="dashboardicon_inner">
                 <i class="fa fa-users"></i><br/><span class="icon_name">Nutzerverwaltung</span>
             </div>

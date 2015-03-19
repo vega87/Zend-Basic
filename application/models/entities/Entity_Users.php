@@ -57,6 +57,20 @@ class Entity_Users extends \MWD_Doctrine_Entity_Abstract
     private $email;
 
     /**
+     * @var integer $firstlogin
+     *
+     * @Column(name="firstlogin", type="integer", nullable=true)
+     */
+    private $firstlogin;
+
+    /**
+     * @var integer $activ
+     *
+     * @Column(name="activ", type="integer", nullable=true)
+     */
+    private $activ;
+
+    /**
      * @var Entity_Roles
      *
      * @ManyToOne(targetEntity="Entity_Roles")
@@ -176,6 +190,46 @@ class Entity_Users extends \MWD_Doctrine_Entity_Abstract
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Set firstlogin
+     *
+     * @param integer $firstlogin
+     */
+    public function setFirstlogin($firstlogin = null)
+    {
+        $this->firstlogin = $firstlogin;
+    }
+
+    /**
+     * Get firstlogin
+     *
+     * @return integer 
+     */
+    public function getFirstlogin()
+    {
+        return $this->firstlogin;
+    }
+
+    /**
+     * Set activ
+     *
+     * @param integer $activ
+     */
+    public function setActiv($activ = null)
+    {
+        $this->activ = $activ;
+    }
+
+    /**
+     * Get activ
+     *
+     * @return integer 
+     */
+    public function getActiv()
+    {
+        return $this->activ;
     }
 
     /**

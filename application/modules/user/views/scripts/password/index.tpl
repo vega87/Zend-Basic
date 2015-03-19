@@ -1,16 +1,33 @@
 {$this->headScript()->prependFile('/js/pages/passwordlist.js')|truncate:0:""}
+
+<div class="panel panel-default">
+    <div class="panel-heading">Neues Passwort</div>
+    <div class="panel-body">
+        <form action="/user/password/create/" id="passwordfrm" method="POST" class="form-inline">
+
+            <button type="submit" class="btn btn-primary">Neues Passwort anlegen</button>
+
+        </form>
+    </div>
+</div>
+
 <div class="panel panel-default">
 
     <div class="panel-body">
 
         <div class="tabbable" style="margin-bottom: 18px;">
             <ul class="nav nav-tabs custom-nav-tabs">
-                <li class="active"><a href="#tab1" data-toggle="tab">Letzten 25 aktivitäten</a></li>
-                <li class=""><a href="#tab2" data-toggle="tab">Top 25 Projektgruppen</a></li>
-                <li class=""><a href="#tab3" data-toggle="tab">Tagesansicht</a></li>
+                {foreach $groups as $group}
+                    {if $group@first}
+                        <li class="active"><a href="#{$group->getId()}" data-toggle="tab">{$group->getName()}</a></li>
+                        {else}
+                        <li class=""><a href="#{$group->getId()}" data-toggle="tab">{$group->getName()}</a></li>
+                    {/if}
+                {/foreach}
             </ul>
             <div class="tab-content" style="padding-bottom: 9px; border-bottom: 1px solid #ddd;">
-                <div class="tab-pane active" id="tab1">
+                {foreach $groups as $group}
+                <div class="tab-pane {if $group@first}active{/if}" id="{$group->getId()}">
                     <table class="footable" data-filter="#filter" data-page-size="5">
                         <thead>
                         <tr>
@@ -21,29 +38,26 @@
                                 Beschreibung
                             </th>
                             <th data-hide="phone,tablet">
-                                Gruppe
-                            </th>
-                            <th data-hide="phone,tablet">
-                                Datum
+                                Angelegt von
                             </th>
                             <th data-hide="" data-sort-ignore="true">
-                                &nbsp;
+
                             </th>
                         </tr>
                         </thead>
                         <tbody>
+                        {foreach $group->getRepository()->getPasswords($group->getId()) as $password}
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td>{$password->getName()}</td>
+                            <td>{$password->getDescription()}</td>
+                            <td>{$password->getCreatedBy()->getFirstname()} {$password->getCreatedBy()->getLastname()}</td>
+                            <td><a href="/user/password/view/id/{$password->getId()}" class="btn btn-block btn-primary">ansehen</a></td>
                         </tr>
+                        {/foreach}
                         </tbody>
                     </table>
                 </div>
-                <div class="tab-pane" id="tab2">
-                </div>
+                {/foreach}
             </div>
         </div>
     </div>

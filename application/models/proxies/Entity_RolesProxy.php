@@ -120,6 +120,12 @@ class Entity_RolesProxy extends \Entity_Roles implements \Doctrine\ORM\Proxy\Pro
         return parent::toSingleArray($depth);
     }
 
+    public function getRepository()
+    {
+        $this->__load();
+        return parent::getRepository();
+    }
+
 
     public function __sleep()
     {

@@ -6,9 +6,7 @@
  * Time: 07:28
  * To change this template use File | Settings | File Templates.
  */
-class MWD_Controller_User extends Zend_Controller_Action{
-
-    public $db = false;
+class MWD_Controller_User extends MWD_Controller_Main{
 
     public function init(){
         $this->_helper->_layout->setLayout('user');

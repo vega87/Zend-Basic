@@ -77,3 +77,58 @@ footer {
     background-color: rgba(255, 110, 0, 0.36);
     background-image: linear-gradient(to bottom, rgba(252, 120, 1, 0.38), rgba(249, 123, 0, 0.68));
 }
+
+.icon-div{
+    width: 16px;
+    height: 16px;
+}
+
+.zoom{
+    background-image: url("../img/icons/zoom.png");
+    width: 16px;
+    height: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.state-active{
+    background-color: #038009;
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+    color: #ffffff;
+}
+
+.state-inactive{
+    background-color: #80030c;
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+    color: #ffffff;
+}

@@ -167,4 +167,20 @@ abstract class MWD_Doctrine_Entity_Abstract {
         $parentObj = new ReflectionClass($parentClass->name);
         return $parentObj->getProperties();
     }
+
+    public function getRepository(){
+        $refObj = new ReflectionClass($this);
+        $myClassName = get_called_class();
+
+        $docClass = $refObj->getDocComment();
+        $matches = preg_match("/\"Repository_(.*)\"/", $docClass, $output_array);
+
+        $repoClass = str_replace('"','',$output_array[0]);
+
+        $em = Zend_Registry::get('entitymanager');
+
+        $class = $em->getRepository($myClassName);
+
+        return $class;
+    }
 }

@@ -57,6 +57,20 @@ class Entity_Users extends \MWD_Doctrine_Entity_Abstract
     private $email;
 
     /**
+     * @var integer $firstlogin
+     *
+     * @Column(name="firstlogin", type="integer", nullable=true)
+     */
+    private $firstlogin;
+
+    /**
+     * @var integer $activ
+     *
+     * @Column(name="activ", type="integer", nullable=true)
+     */
+    private $activ;
+
+    /**
      * @var Entity_Roles
      *
      * @ManyToOne(targetEntity="Entity_Roles")
