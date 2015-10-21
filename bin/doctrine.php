@@ -9,7 +9,7 @@ set_include_path(implode(PATH_SEPARATOR, array(
 
 // Doctrine and Symfony Classes
 require_once APPLICATION_PATH.'/../library/Doctrine/Common/ClassLoader.php';
-require_once APPLICATION_PATH.'/../library/MWD/System/Autoloader.php';
+require_once APPLICATION_PATH.'/../library/MSF/System/Autoloader.php';
 $classLoader = new \Doctrine\Common\ClassLoader('Doctrine', APPLICATION_PATH . '/../library');
 $classLoader->register();
 $classLoader = new \Doctrine\Common\ClassLoader('Symfony', APPLICATION_PATH . '/../library/Doctrine');
@@ -22,8 +22,8 @@ require_once('../public/bootstrap.php');
 
 /** Zend_Application */
 require_once 'Zend/Application.php';
-Zend_Loader_Autoloader::getInstance()->registerNamespace('MWD_');
-MWD_Doctrine_DoctrineLoader::init();
+Zend_Loader_Autoloader::getInstance()->registerNamespace('MSF_');
+MSF_Doctrine_DoctrineLoader::init();
 
 $registry = Zend_Registry::getInstance();
 // generate the Doctrine HelperSet
@@ -58,9 +58,9 @@ $cli->addCommands(array(
     new \Doctrine\ORM\Tools\Console\Command\ValidateSchemaCommand(),
 
 
-    // MWD COMMANDS
-    new MWD_Task_BuildEntities(),
-    new MWD_Task_ConvertMapping()
+    // MSF COMMANDS
+    new MSF_Task_BuildEntities(),
+    new MSF_Task_ConvertMapping()
 
 
 ));

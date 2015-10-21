@@ -1,11 +1,11 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: MWD
+ * User: MSF
  * Date: 13.03.15
  * Time: 13:44
  */
-class User_PasswordController extends MWD_Controller_User{
+class User_PasswordController extends MSF_Controller_User{
 
     public function indexAction(){
         $this->view->groups = $this->db->getRepository('Entity_Groups')->findAll();
@@ -28,10 +28,10 @@ class User_PasswordController extends MWD_Controller_User{
 
         if(isset($params['create'])){
             //Verschlüsseln
-            $session = new Zend_Session_Namespace('MWD_PW_de');
+            $session = new Zend_Session_Namespace('MSF_PW_de');
             $user = $this->db->getRepository('Entity_Users')->find($session->userid);
 
-            $pwSettings = MWD_System_ClassManager::getStaticInstance('MWD_Config', 'getInstance')->getValue('pwmanager');
+            $pwSettings = MSF_System_ClassManager::getStaticInstance('MSF_Config', 'getInstance')->getValue('pwmanager');
 
             $encrypted = mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $pwSettings['password'], $params['password'], MCRYPT_MODE_ECB,file_get_contents(APPLICATION_PATH.'/../passwordkey/key'));
 

@@ -8,25 +8,25 @@
  */
 defined('APPLICATION_PATH') || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../application'));
 defined('PUBLIC_PATH') || define('PUBLIC_PATH', realpath(dirname(__FILE__) . '/'));
-defined('MWD_PATH') || define('MWD_PATH', realpath(dirname(__FILE__) . '/../library/MWD/'));
+defined('MSF_PATH') || define('MSF_PATH', realpath(dirname(__FILE__) . '/../library/MSF/'));
 defined('LIBRARY_PATH') || define('LIBRARY_PATH', realpath(dirname(__FILE__) . '/../library/'));
 defined('DS') || define('DS', DIRECTORY_SEPARATOR);
 
-require_once(MWD_PATH . DS . 'Singleton.php');
+require_once(MSF_PATH . DS . 'Singleton.php');
 
-require_once(MWD_PATH . DS . 'System' . DS . 'ClassManager.php');
-require_once(MWD_PATH . DS . 'Doctrine' . DS . 'DoctrineLoader.php');
-require_once(MWD_PATH . DS . 'MWD.php');
+require_once(MSF_PATH . DS . 'System' . DS . 'ClassManager.php');
+require_once(MSF_PATH . DS . 'Doctrine' . DS . 'DoctrineLoader.php');
+require_once(MSF_PATH . DS . 'MSF.php');
 
-require_once(MWD_PATH . DS . "System" . DS . "Startup.php");
+require_once(MSF_PATH . DS . "System" . DS . "Startup.php");
 
 
 // initialize tecbase system environment
-MWD_System_Startup::getInstance()->init();
+MSF_System_Startup::getInstance()->init();
 
 // run tecbase, zend framework, doctrine 2, etc.
 if(PHP_SAPI !== 'cli'){
-    MWD_System_Startup::getInstance()->run();
+    MSF_System_Startup::getInstance()->run();
 }
 
 ?>

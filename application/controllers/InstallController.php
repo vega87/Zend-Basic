@@ -1,12 +1,12 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: MWD
+ * User: MSF
  * Date: 19.03.15
  * Time: 15:50
  */
 
-class InstallController extends MWD_Controller_Main {
+class InstallController extends MSF_Controller_Main {
 
     public function step1Action(){
         if(!is_file(APPLICATION_PATH.'/../passwordkey/key')) {

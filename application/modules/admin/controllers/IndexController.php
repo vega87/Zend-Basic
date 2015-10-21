@@ -1,6 +1,6 @@
 <?php
 
-class Admin_IndexController extends MWD_Controller_Admin
+class Admin_IndexController extends MSF_Controller_Admin
 {
 
     public function indexAction()

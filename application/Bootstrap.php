@@ -19,8 +19,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
      * @return Zend_Application_Module_Autoloader
      */
     protected function _initAutoload(){
-        Zend_Loader_Autoloader::getInstance()->registerNamespace('MWD_');
-        MWD_Doctrine_DoctrineLoader::init();
+        Zend_Loader_Autoloader::getInstance()->registerNamespace('MSF_');
+        MSF_Doctrine_DoctrineLoader::init();
     }
 
     /**
@@ -46,7 +46,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $layout = Zend_Layout::getMvcInstance();
         $layout->setViewSuffix('tpl');
 
-        $view->addHelperPath('MWD/View/Helper', 'MWD_View_Helper');
+        $view->addHelperPath('MSF/View/Helper', 'MSF_View_Helper');
 
         return $view;
     }

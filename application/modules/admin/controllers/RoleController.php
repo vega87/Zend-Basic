@@ -1,22 +1,17 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: MWD
+ * User: MSF
  * Date: 16.03.15
  * Time: 12:38
  */
 
-class Admin_RoleController extends MWD_Controller_Admin
+class Admin_RoleController extends MSF_Controller_Admin
 {
 
     public function indexAction()
     {
         $roles = $this->db->getRepository('Entity_Roles')->findAll();
-
-        $role = $roles[3];
-
-        //print_r($role->getGroup()[0]); exit;
-
         $this->view->roles = $this->db->getRepository('Entity_Roles')->findAll();
     }
 
@@ -25,13 +20,16 @@ class Admin_RoleController extends MWD_Controller_Admin
         $params = $this->getRequest()->getParams();
 
         if(isset($params['create'])){
-            $groups = $params['groups'];
+            $groups = Array();
+            if(isset($params['groups'])) {
+                $groups = $params['groups'];
+            }
             $name   = $params['name'];
 
             $role = new Entity_Roles();
             $role->setName($name);
             $role->setMetaKey(strtoupper($name));
-            $role->setCreatedAt(new DateTime());
+            $role->setCreatedAt(date('Y-m-d H:i:s'));
             $role->setDescription($params['description']);
             foreach($groups as $key => $group){
                 if($group == "all"){

@@ -1,7 +1,8 @@
 <div class="orangeBox">
     <div class="content">
-        <img src="/img/mwd-systems-logo_large.png" style="width:100%;" class="loginImg"/>
-
+        <center>
+        <img src="/img/sd-logo.png" style="width:280px;" class="loginImg"/>
+        </center>
         <form action="/index/" method="post" class="bs-docs-example form-horizontal">
             <div class="form-group">
 

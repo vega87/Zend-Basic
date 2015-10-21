@@ -6,7 +6,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MWD Systems TimeTrackingTool</title>
+    <title>MSF PWManager</title>
 
     <!-- Le styles -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' rel='stylesheet' type='text/css'>
@@ -20,6 +20,7 @@
     {$this->headLink()}
 
     <!-- Scripts -->
+    {$this->headScript()->prependFile('/js/script.js')|truncate:0:""}
     {$this->headScript()->prependFile('/js/footable.paginate.js')|truncate:0:""}
     {$this->headScript()->prependFile('/js/footable.sort.js')|truncate:0:""}
     {$this->headScript()->prependFile('/js/footable.js')|truncate:0:""}
@@ -52,7 +53,7 @@
 
             </button>
 
-            <a class="navbar-brand" href="#">PasswordManager</a>
+            <a class="navbar-brand" href="/">PasswordManager</a>
 
         </div>
 
@@ -87,7 +88,7 @@
 
             <footer>
 
-                <p>MWD-Systems &copy; 2015</p>
+                <p>Mike Smolka &copy; 2015</p>
 
             </footer>
 

@@ -33,7 +33,7 @@
                 <select class="form-control" name="role" id="inputRole">
                     <option value="">Bitte wählen</option>
                     {foreach $roles as $role}
-                        <option value="{$role->getId()}">{$role->getName()}</option>
+                        <option value="{$role->getId()}" {if $role->getId() == $user->getRole()->getId()}selected="selected"{/if}>{$role->getName()}</option>
                     {/foreach}
                 </select>
 
@@ -47,7 +47,7 @@
 
             </div>
 
-            <input class="btn btn-block btn-primary" type="submit" name="create" value="Anlegen" />
+            <input class="btn btn-block btn-primary" type="submit" name="edit" value="Speichern" />
         </form>
     </div>
 </div>

@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @Table(name="Users")
  * @Entity(repositoryClass="Repository_Users")
  */
-class Entity_Users extends \MWD_Doctrine_Entity_Abstract
+class Entity_Users extends \MSF_Doctrine_Entity_Abstract
 {
     /**
      * @var integer $id

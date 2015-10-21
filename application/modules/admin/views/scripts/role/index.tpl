@@ -17,9 +17,7 @@
 
         <div class="tabbable" style="margin-bottom: 18px;">
             <ul class="nav nav-tabs custom-nav-tabs">
-                <li class="active"><a href="#tab1" data-toggle="tab">Letzten 25 aktivitäten</a></li>
-                <li class=""><a href="#tab2" data-toggle="tab">Top 25 Projektgruppen</a></li>
-                <li class=""><a href="#tab3" data-toggle="tab">Tagesansicht</a></li>
+                <li class="active"><a href="#tab1" data-toggle="tab">Rollen übersicht</a></li>
             </ul>
             <div class="tab-content" style="padding-bottom: 9px; border-bottom: 1px solid #ddd;">
                 <div class="tab-pane active" id="tab1">

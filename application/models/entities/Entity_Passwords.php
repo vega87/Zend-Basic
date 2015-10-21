@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @Table(name="Passwords")
  * @Entity(repositoryClass="Repository_Passwords")
  */
-class Entity_Passwords extends \MWD_Doctrine_Entity_Abstract
+class Entity_Passwords extends \MSF_Doctrine_Entity_Abstract
 {
     /**
      * @var integer $id

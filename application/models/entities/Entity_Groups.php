@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @Table(name="Groups")
  * @Entity(repositoryClass="Repository_Groups")
  */
-class Entity_Groups extends \MWD_Doctrine_Entity_Abstract
+class Entity_Groups extends \MSF_Doctrine_Entity_Abstract
 {
     /**
      * @var integer $id
@@ -52,7 +52,15 @@ class Entity_Groups extends \MWD_Doctrine_Entity_Abstract
     /**
      * @var Entity_Roles
      *
-     * @ManyToMany(targetEntity="Entity_Roles", mappedBy="group")
+     * @ManyToMany(targetEntity="Entity_Roles", inversedBy="role")
+     * @JoinTable(name="role_groups",
+     *   joinColumns={
+     *     @JoinColumn(name="group_id", referencedColumnName="id")
+     *   },
+     *   inverseJoinColumns={
+     *     @JoinColumn(name="role_id", referencedColumnName="id")
+     *   }
+     * )
      */
     private $role;
 
